@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-top: #090b0d;
+  --bg-bottom: #0d1114;
+}
+
+html,
+body,
+#__next {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Trebuchet MS", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #103423 0%, transparent 24%),
+    radial-gradient(circle at bottom left, #12231b 0%, transparent 26%),
+    radial-gradient(circle at 70% 35%, #0f2219 0%, transparent 29%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+  color: #dffdea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  transition: all 0.2s ease;
+}
+
+.tab-btn {
+  border-radius: 0.6rem;
+  border: 1px solid rgba(45, 255, 158, 0.25);
+  background: rgba(13, 36, 26, 0.65);
+  color: #c4f8db;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.tab-btn:hover,
+.tab-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(45, 255, 158, 0.4), 0 0 18px rgba(45, 255, 158, 0.2);
+  outline: none;
+}
+
+.tab-btn-active {
+  background: linear-gradient(130deg, #2dff9e, #b8ffd9);
+  color: #042413;
+}
+
+.btn-neon {
+  border-radius: 0.62rem;
+  border: 1px solid rgba(45, 255, 158, 0.45);
+  background: linear-gradient(140deg, #31ffa4 0%, #b7ffd8 100%);
+  color: #032211;
+  padding: 0.48rem 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(45, 255, 158, 0.2);
+}
+
+.btn-neon:hover,
+.btn-neon:focus-visible {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 0 0 1px rgba(45, 255, 158, 0.7), 0 12px 28px rgba(45, 255, 158, 0.24);
+  outline: none;
+}
+
+.btn-ghost {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(45, 255, 158, 0.3);
+  background: rgba(9, 26, 19, 0.65);
+  color: #c0f9d8;
+  padding: 0.2rem 0.55rem;
+  font-weight: 700;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: rgba(45, 255, 158, 0.2);
+  outline: none;
+}
+
+.icon-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(45, 255, 158, 0.3);
+  background: rgba(9, 26, 19, 0.65);
+  color: #c0f9d8;
+}
+
+.icon-btn:hover,
+.icon-btn:focus-visible {
+  background: rgba(45, 255, 158, 0.2);
+  box-shadow: 0 0 0 1px rgba(45, 255, 158, 0.35), 0 0 14px rgba(45, 255, 158, 0.15);
+  outline: none;
+}
+
+.icon-btn-active {
+  background: rgba(45, 255, 158, 0.24);
+  border-color: rgba(45, 255, 158, 0.55);
+}
+
+.mini-btn {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(45, 255, 158, 0.25);
+  padding: 0.32rem 0.6rem;
+  background: rgba(10, 33, 23, 0.72);
+  color: #c8f9de;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.mini-btn-active {
+  background: #2dff9e;
+  color: #033017;
+}
+
+.tool-button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(45, 255, 158, 0.24);
+  border-radius: 0.55rem;
+  background: rgba(11, 34, 23, 0.78);
+  color: #cbf8de;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.tool-button::after {
+  content: "↗";
+  position: absolute;
+  right: 0.6rem;
+  opacity: 0;
+  transform: translateX(-3px);
+  transition: all 0.2s ease;
+}
+
+.tool-button:hover,
+.tool-button:focus-visible {
+  border-color: rgba(45, 255, 158, 0.5);
+  box-shadow: 0 0 0 1px rgba(45, 255, 158, 0.35), 0 7px 16px rgba(45, 255, 158, 0.14);
+  outline: none;
+}
+
+.tool-button:hover::after,
+.tool-button:focus-visible::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tool-button-active {
+  background: rgba(45, 255, 158, 0.2);
+  border-color: rgba(45, 255, 158, 0.56);
+}
+
+.input-neon,
+.select-neon {
+  border-radius: 0.6rem;
+  border: 1px solid rgba(45, 255, 158, 0.3);
+  background: rgba(10, 35, 24, 0.82);
+  color: #dbfee9;
+  padding: 0.5rem 0.65rem;
+}
+
+.input-neon::placeholder {
+  color: #80b79a;
+}
+
+.input-neon:focus,
+.select-neon:focus {
+  border-color: rgba(45, 255, 158, 0.8);
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(45, 255, 158, 0.35), 0 0 18px rgba(45, 255, 158, 0.18);
+}
+
+.calendar-cell {
+  min-height: 92px;
+  border-right: 1px solid rgba(45, 255, 158, 0.1);
+  border-bottom: 1px solid rgba(45, 255, 158, 0.1);
+  padding: 0.55rem;
+  background: rgba(8, 28, 19, 0.7);
+}
+
+.calendar-cell:nth-child(7n) {
+  border-right: 0;
+}
+
+.calendar-cell-out {
+  opacity: 0.45;
+}
+
+.calendar-cell-win {
+  background: linear-gradient(140deg, rgba(45, 255, 158, 0.22), rgba(9, 35, 22, 0.85));
+}
+
+.calendar-cell-loss {
+  background: linear-gradient(140deg, rgba(255, 90, 95, 0.2), rgba(36, 11, 13, 0.85));
+}
+
+.chart-tool-rail {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid rgba(45, 255, 158, 0.3);
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(6, 12, 10, 0.78);
+}
+
+.chart-tool-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(45, 255, 158, 0.25);
+  background: rgba(13, 32, 23, 0.76);
+  color: #ccffe3;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.chart-tool-btn:hover,
+.chart-tool-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(45, 255, 158, 0.35), 0 0 15px rgba(45, 255, 158, 0.16);
+}
+
+.chart-tool-btn-active {
+  border-color: rgba(45, 255, 158, 0.7);
+  background: rgba(45, 255, 158, 0.23);
+  color: #dbffeb;
+}
+
+.chart-tool-btn[title] {
+  position: relative;
+}
+
+.chart-tool-btn[title]:hover::after,
+.chart-tool-btn[title]:focus-visible::after {
+  content: attr(title);
+  position: absolute;
+  left: 43px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
+  color: #d8ffea;
+  border: 1px solid rgba(45, 255, 158, 0.35);
+  border-radius: 6px;
+  padding: 4px 7px;
+  background: rgba(6, 17, 12, 0.94);
+}
+
+.timeframe-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.55rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #d8ffea;
+  padding: 0.42rem 0.5rem;
+  font-size: 0.84rem;
+}
+
+.timeframe-item:hover,
+.timeframe-item:focus-visible {
+  border-color: rgba(45, 255, 158, 0.35);
+  background: rgba(45, 255, 158, 0.12);
+  outline: none;
+}
+
+.timeframe-item-active {
+  background: rgba(45, 255, 158, 0.18);
+  border-color: rgba(45, 255, 158, 0.45);
+}
